@@ -4,7 +4,6 @@ import numpy as np
 
 # CODE WRITTEN BY JAMES ABSOLOM 2022 for Kernow Robotics #
 
-
 class DetectorClass:
 
     def __init__(self, configPath, modelPath, classesPath):
@@ -77,4 +76,4 @@ class DetectorClass:
                         classIDs.append(classID)
             # Apply suppression to suppress weak, overlapping bounding boxes
             idxs = cv2.dnn.NMSBoxes(boxes, confidences, dafThreshold, 0.5)
-            return idxs, boxes
+            return idxs, boxes, classIDs, confidences
